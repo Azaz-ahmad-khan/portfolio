@@ -714,3 +714,70 @@ footer {
         display: block;
     }
 }
+/* Light Theme Variables */
+[data-theme="light"] {
+    --bg-main: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-blue: #0284c7;
+    --accent-purple: #7e22ce;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .background-glow {
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+}
+[data-theme="light"] .background-glow::after {
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+[data-theme="light"] #navbar {
+    background: rgba(255, 255, 255, 0.8);
+}
+[data-theme="light"] #navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+}
+[data-theme="light"] .hero-image img {
+    border-color: var(--bg-main);
+}
+[data-theme="light"] .social-links a {
+    background: rgba(0,0,0,0.03);
+}
+[data-theme="light"] .social-links a:hover {
+    background: rgba(126, 34, 206, 0.1);
+}
+[data-theme="light"] .badge {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Nav Actions (Toggle + Hamburger) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    color: var(--accent-blue);
+    transform: rotate(15deg);
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .nav-links {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}

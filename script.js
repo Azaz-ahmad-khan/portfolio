@@ -56,3 +56,26 @@ window.addEventListener('load', () => {
         });
     }, 100);
 });
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme preference in localStorage
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeIcon.classList.replace('fa-sun', 'fa-moon');
+}
+
+themeToggle.addEventListener('click', () => {
+    if (document.documentElement.getAttribute('data-theme') === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('portfolio-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('portfolio-theme', 'light');
+    }
+});
