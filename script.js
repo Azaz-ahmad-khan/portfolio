@@ -15,12 +15,44 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Add subtle shadow change to navbar on scroll
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 0) {
-        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+        navbar.classList.remove('scrolled');
     }
+});
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, revealOptions);
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});
+
+// Trigger reveal for hero section immediately on load
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.querySelectorAll('#hero .reveal').forEach(el => {
+            el.classList.add('active');
+        });
+    }, 100);
 });
