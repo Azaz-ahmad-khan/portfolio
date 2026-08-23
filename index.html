@@ -25,6 +25,7 @@
                 <li><a href="#projects">Work</a></li>
                 <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#certifications">Certs</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" aria-label="Toggle Theme">
@@ -301,6 +302,53 @@
                     </div>
                 </a>
 
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-container glass-card reveal">
+                <div class="contact-info">
+                    <h3>Let's build something amazing together.</h3>
+                    <p>Whether you have a question, a project idea, or just want to say hi, my inbox is always open.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:azazahmadkhan264@gmail.com">azazahmadkhan264@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Peshawar, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="e8dcb23c-83e3-41b1-993d-4f51b304b8cc">
+                        
+                        <!-- Custom redirect after submission (optional) -->
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        
+                        <!-- Prevent spam -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
